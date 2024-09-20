@@ -33,7 +33,7 @@ app.get("/v1", (req, res) => {
                 const image = $(this).find("a > img").attr("data-src")
                 thumbnails.push({
                     name: name,
-                    url: "http://localhost:8000/v1" + url.split("/wiki")[1],
+                    url: "https://kimetsu-no-yaiba-api-rdxs.onrender.com/v1" + url.split("/wiki")[1],
                     image: image
                 })
             })
@@ -102,6 +102,6 @@ app.get("/v1/:character", (req, res) => {
     }
 })
 
-app.listen(8000, (req, res) => {
+app.listen(process.env.PORT || 8000, (req, res) => {
     console.log("Server is running ...")
 })
